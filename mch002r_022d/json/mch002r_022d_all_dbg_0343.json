@@ -1,0 +1,44 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 7,
+   "faces" : 5,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Join et_33: Tensor tympani body",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 0.784, 0.196, 0.196],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0669389, 0.0675998, 0.0165,
+  0.06875, 0.06698, 0.0165,
+  0.06685, 0.06969, 0.016,
+  0.0645796, 0.0704406, 0.016,
+  0.06503, 0.06816, 0.016,
+  0.06509, 0.06809, 0.0165,
+  0.0648261, 0.0709467, 0.016
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 0, 3, 4, 0,
+  2, 5, 0, 4, 0,
+  2, 0, 2, 6, 0,
+  2, 0, 6, 3, 0
+]
+ }

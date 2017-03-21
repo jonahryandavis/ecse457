@@ -1,0 +1,38 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 4,
+   "faces" : 2,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap ec_anttip1_35_head: Ear canal",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 0.824, 0.706, 0.549],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.04617, 0.06905, 0.0175,
+  0.04746, 0.06972, 0.0175,
+  0.04721, 0.06872, 0.0175,
+  0.04642, 0.07005, 0.0175
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 1, 0, 0
+]
+ }

@@ -1,0 +1,46 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 8,
+   "faces" : 6,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Join cavity_031: cav",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 1.000, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0553972, 0.0805574, 0.016,
+  0.05569, 0.0782, 0.016,
+  0.05613, 0.0782, 0.0155,
+  0.0523, 0.08082, 0.016,
+  0.0536346, 0.0822991, 0.016,
+  0.0530895, 0.08265, 0.0155,
+  0.0551182, 0.0806971, 0.0155,
+  0.05205, 0.08072, 0.0155
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 4, 5, 0,
+  2, 4, 0, 6, 0,
+  2, 0, 2, 6, 0,
+  2, 3, 5, 7, 0,
+  2, 4, 6, 5, 0
+]
+ }

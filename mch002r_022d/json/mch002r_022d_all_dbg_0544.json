@@ -1,0 +1,44 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 7,
+   "faces" : 5,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap os_temp_in_29_tail: Temporal bone",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 0.784, 0.588],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0719476, 0.0668968, 0.0155,
+  0.0706975, 0.0677108, 0.0155,
+  0.0714687, 0.0685814, 0.0155,
+  0.0728498, 0.0680645, 0.0155,
+  0.0733332, 0.0663255, 0.0155,
+  0.0743115, 0.0678717, 0.0155,
+  0.07474, 0.06666, 0.0155
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 0, 2, 3, 0,
+  2, 4, 0, 3, 0,
+  2, 4, 3, 5, 0,
+  2, 5, 6, 4, 0
+]
+ }

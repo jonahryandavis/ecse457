@@ -1,0 +1,46 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 7,
+   "faces" : 7,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Join inc_34: Incus",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 0.784, 0.588],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0613296, 0.0738415, 0.017,
+  0.0606507, 0.073575, 0.0165,
+  0.0612809, 0.0728682, 0.0165,
+  0.06253, 0.07391, 0.017,
+  0.0616443, 0.0729893, 0.017,
+  0.0625, 0.07372, 0.0165,
+  0.06213, 0.07412, 0.0165
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 4, 5, 0,
+  2, 4, 2, 5, 0,
+  2, 4, 0, 2, 0,
+  2, 0, 3, 6, 0,
+  2, 0, 6, 1, 0,
+  2, 3, 5, 6, 0
+]
+ }
