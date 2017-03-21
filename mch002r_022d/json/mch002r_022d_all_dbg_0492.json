@@ -1,0 +1,46 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 8,
+   "faces" : 6,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap CNEWBONET: bone",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 1.000, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.06038, 0.0794, 0.023,
+  0.0605167, 0.0763131, 0.023,
+  0.0630574, 0.0787259, 0.023,
+  0.06872, 0.0727, 0.023,
+  0.0675603, 0.0752252, 0.023,
+  0.0657667, 0.0721966, 0.023,
+  0.0631428, 0.074242, 0.023,
+  0.0654573, 0.0771715, 0.023
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 4, 5, 0,
+  2, 1, 6, 2, 0,
+  2, 2, 6, 7, 0,
+  2, 5, 4, 6, 0,
+  2, 4, 7, 6, 0
+]
+ }

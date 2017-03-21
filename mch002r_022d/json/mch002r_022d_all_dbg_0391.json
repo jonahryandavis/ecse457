@@ -1,0 +1,44 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 7,
+   "faces" : 5,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Join os_temp_cut_29: Temporal bone",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 0.784, 0.588],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0544067, 0.09, 0.0145,
+  0.0556, 0.09, 0.0145,
+  0.05319, 0.09, 0.014,
+  0.0532133, 0.09, 0.0145,
+  0.05202, 0.09, 0.0145,
+  0.05147, 0.09, 0.014,
+  0.05491, 0.09, 0.014
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 0, 2, 0,
+  2, 4, 3, 5, 0,
+  2, 3, 2, 5, 0,
+  2, 1, 6, 2, 0
+]
+ }

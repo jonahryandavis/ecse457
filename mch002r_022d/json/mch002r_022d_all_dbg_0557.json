@@ -1,0 +1,46 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 8,
+   "faces" : 6,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap labscc_post_21_head: Semicircular canals",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 0.667, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.06283, 0.08298, 0.0105,
+  0.06283, 0.08261, 0.0105,
+  0.06218, 0.08303, 0.0105,
+  0.06325, 0.08233, 0.0105,
+  0.06358, 0.08289, 0.0105,
+  0.06386, 0.0827, 0.0105,
+  0.06381, 0.08172, 0.0105,
+  0.06442, 0.08223, 0.0105
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 0, 4, 0,
+  2, 3, 1, 0, 0,
+  2, 3, 5, 6, 0,
+  2, 3, 4, 5, 0,
+  2, 6, 5, 7, 0
+]
+ }

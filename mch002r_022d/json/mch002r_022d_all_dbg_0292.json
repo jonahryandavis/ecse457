@@ -1,0 +1,42 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 6,
+   "faces" : 4,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Join cav2_028: cav",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 1.000, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0535155, 0.0704425, 0.0145,
+  0.053024, 0.0698469, 0.014,
+  0.05476, 0.07009, 0.014,
+  0.05454, 0.06913, 0.0145,
+  0.05373, 0.07209, 0.0145,
+  0.05353, 0.07157, 0.014
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 0, 2, 0,
+  2, 0, 4, 5, 0,
+  2, 0, 5, 1, 0
+]
+ }

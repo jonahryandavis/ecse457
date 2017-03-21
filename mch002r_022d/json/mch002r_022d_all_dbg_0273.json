@@ -1,0 +1,40 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 5,
+   "faces" : 3,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Join JS-42-43-2b:     ",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 1.000, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0629883, 0.0735368, 0.0215,
+  0.06582, 0.07096, 0.021,
+  0.0606, 0.07654, 0.021,
+  0.06595, 0.07186, 0.0215,
+  0.06158, 0.07637, 0.0215
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 0, 3, 1, 0,
+  2, 4, 0, 2, 0
+]
+ }

@@ -1,0 +1,42 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 6,
+   "faces" : 4,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap lig_stp_postmed_28: (no description)",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 1.000, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0642371, 0.0753087, 0.0135,
+  0.06463, 0.07522, 0.0135,
+  0.06481, 0.07507, 0.0135,
+  0.06387, 0.07596, 0.0135,
+  0.0637446, 0.075718, 0.0135,
+  0.06355, 0.07631, 0.0135
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 4, 5, 0,
+  2, 0, 3, 1, 0,
+  2, 3, 0, 4, 0
+]
+ }

@@ -1,0 +1,40 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 5,
+   "faces" : 3,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap mal_antproc_med_31_tail: Malleus",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 0.784, 0.588],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0616412, 0.069388, 0.016,
+  0.0614597, 0.0699909, 0.016,
+  0.06109, 0.07021, 0.016,
+  0.06155, 0.06889, 0.016,
+  0.06141, 0.07059, 0.016
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 0, 2, 0,
+  2, 2, 1, 4, 0
+]
+ }

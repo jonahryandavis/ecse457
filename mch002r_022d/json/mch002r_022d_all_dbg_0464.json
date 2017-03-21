@@ -1,0 +1,42 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 6,
+   "faces" : 4,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap os_cavpost_31_head: Cavity wall",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 0.784, 0.588],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.062788, 0.0799353, 0.015,
+  0.0616046, 0.0799096, 0.015,
+  0.0619221, 0.0791274, 0.015,
+  0.0628301, 0.0791004, 0.015,
+  0.06235, 0.07846, 0.015,
+  0.0621266, 0.08035, 0.015
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 3, 2, 4, 0,
+  2, 0, 2, 3, 0,
+  2, 5, 1, 0, 0
+]
+ }

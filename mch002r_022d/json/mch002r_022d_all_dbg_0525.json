@@ -1,0 +1,38 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 4,
+   "faces" : 2,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "Cap m_tenstymp_head: Tensor tympani body",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 0.784, 0.196, 0.196],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.0625983, 0.0713229, 0.0145,
+  0.06489, 0.07185, 0.0145,
+  0.0643, 0.06984, 0.0145,
+  0.0630382, 0.0731408, 0.0145
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 0, 3, 1, 0
+]
+ }

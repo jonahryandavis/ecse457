@@ -1,0 +1,46 @@
+ {
+  "metadata" :
+  {
+   "formatVersion" : 3,
+   "sourceFile" : "mch002r_022d",
+   "generatedBy" : "Tr3 20161112",
+   "vertices" : 8,
+   "faces" : 6,
+   "normals" : 0,
+   "colors" : 0,
+   "uvs" : 0,
+   "materials" : 1
+  },
+  "scale" : 1.0,
+  "materials": [{
+    "DbgColor": 0,
+    "DbgIndex": 0,
+    "DbgName" : "11_45: (no description)",
+    "colorAmbient": [0.0, 0.0, 0.0],
+    "colorDiffuse": [ 1.000, 1.000, 1.000],
+    "colorSpecular": [0.16, 0.16, 0.16]
+    }],
+  "vertices": [
+  0.04633, 0.07896, 0.023,
+  0.0509403, 0.0792503, 0.0225,
+  0.04624, 0.07924, 0.0225,
+  0.050989, 0.0790142, 0.023,
+  0.055657, 0.0796035, 0.0225,
+  0.055686, 0.0793075, 0.023,
+  0.06035, 0.07957, 0.0225,
+  0.06038, 0.0794, 0.023
+ ],
+ "morphTargets": [],
+ "morphColors": [],
+ "normals": [],
+ "colors": [],
+ "uvs": [[]],
+  "faces": [
+  2, 0, 1, 2, 0,
+  2, 0, 3, 1, 0,
+  2, 3, 4, 1, 0,
+  2, 3, 5, 4, 0,
+  2, 5, 6, 4, 0,
+  2, 5, 7, 6, 0
+]
+ }
