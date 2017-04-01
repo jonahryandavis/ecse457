@@ -1,5 +1,5 @@
 """
-A crappy implementation of intelligent scissors/livewire algorithm
+An implementation of intelligent scissors/livewire algorithm
 """
 
 from __future__ import division
