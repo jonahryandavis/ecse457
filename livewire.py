@@ -5,6 +5,7 @@ An implementation of intelligent scissors/livewire algorithm
 from __future__ import division
 import cv2
 import numpy as np
+import time
 
 SQRT_0_5 = 0.70710678118654757
 
@@ -25,6 +26,7 @@ class Livewire():
         self.cost_grad_mag = 1 - self.grad_mag/np.max(self.grad_mag)
         # Weight for (Canny edges, gradient magnitude, gradient direction)
         self.weight = (0.425, 0.425, 0.15)
+        self.extra_space = 25
         
         self.n_pixs = self.x_lim * self.y_lim
         self.n_processed = 0
@@ -48,15 +50,15 @@ class Livewire():
         
         return grad_x, grad_y, grad_mag
     
-    def _get_neighbors(self, p):
+    def _get_neighbors(self, p, min_x, max_x, min_y, max_y):
         """
         Return 8 neighbors around the pixel p
         """
         x, y = p
-        x0 = 0 if x == 0 else x - 1
-        x1 = self.x_lim if x == self.x_lim - 1 else x + 2
-        y0 = 0 if y == 0 else y - 1
-        y1 = self.y_lim if y == self.y_lim - 1 else y + 2
+        x0 = min_x if x == min_x else x - 1
+        x1 = max_x + 1 if x == max_x else x + 2
+        y0 = min_y if y == min_y else y - 1
+        y1 = max_y + 1 if y == max_y else y + 2
         
         return [(x, y) for x in xrange(x0, x1) for y in xrange(y0, y1) if (x, y) != p]
     
@@ -106,7 +108,7 @@ class Livewire():
         
         return cost_pq * cost_pq
 
-    def get_path_matrix(self, seed):
+    def get_path_matrix(self, seed, p):
         """
         Get the back tracking matrix of the whole image from the cost matrix
         """
@@ -114,13 +116,20 @@ class Livewire():
         processed = set()       # Processed point
         cost = {seed: 0.0}      # Accumulated cost, initialized with seed to itself
         paths = {}
+        p_x, p_y = p
+        s_x, s_y = seed
+        min_x = max(0, min(p_x - self.extra_space, s_x - self.extra_space))
+        max_x = min(self.x_lim, max(p_x + self.extra_space, s_x + self.extra_space))
+        min_y = max(0, min(p_y - self.extra_space, s_y - self.extra_space))
+        max_y = min(self.y_lim, max(p_y + self.extra_space, s_y + self.extra_space))
+        
 
         self.n_processed = 0
         
         while cost:
             # Expand the minimum cost point
             p = min(cost, key=cost.get)
-            neighbors = self._get_neighbors(p)
+            neighbors = self._get_neighbors(p, min_x, max_x, min_y, max_y)
             processed.add(p)
 
             # Record accumulated costs and back tracking point for newly expanded points

@@ -46,7 +46,6 @@ class ImageWin(QtGui.QWidget):
         self.setLayout(self.hbox)
    
     def keyPressEvent(self, event):
-         if self.seed_enabled:
             pos = QtGui.QCursor.pos()
             x, y = pos.x()-self.canvas.x(), pos.y()-self.canvas.y()
             
@@ -85,55 +84,59 @@ class ImageWin(QtGui.QWidget):
                 image.save(filepath, quality=100)
  
     def mousePressEvent(self, event):            
-        if self.seed_enabled:
-            pos = event.pos()
-            x, y = pos.x()-self.canvas.x(), pos.y()-self.canvas.y()
-            
-            if x < 0:
-                x = 0
-            if x >= self.w:
-                x = self.w - 1
-            if y < 0:
-                y = 0
-            if y >= self.h:
-                y = self.h - 1
-
-            # Get the mouse cursor position
-            p = y, x
-            seed = self.seed
-            
-            self.seed = p
-                
-            if self.path_map:
-                while p != seed:
-                    p = self.path_map[p]
-                    self.path.append(p)
-            
-            # Calculate path map
             if event.buttons() == QtCore.Qt.LeftButton:
-                Thread(target=self._cal_path_matrix).start()
-                Thread(target=self._update_path_map_progress).start()
+                pos = event.pos()
+                x, y = pos.x()-self.canvas.x(), pos.y()-self.canvas.y()
             
+                if x < 0:
+                    x = 0
+                if x >= self.w:
+                    x = self.w - 1
+                if y < 0:
+                    y = 0
+                if y >= self.h:
+                    y = self.h - 1
+
+                # Get the mouse cursor position
+                p = y, x
+                seed = self.seed
+            
+                self.seed = p
+                self.seed_enabled = True
+                
+                if seed is not None and self.path_map:
+                    while p != seed:
+                        p = self.path_map[p]
+                        self.path.append(p)
+              
             # Finish current task and reset
             elif event.buttons() == QtCore.Qt.RightButton:
                 self.path_map = {}
+                self.seed_enabled = False
+                self.seed = None
                 self.status_bar.showMessage('Left click to set a seed')
                 self.active = False
     
     def mouseMoveEvent(self, event):
-        if self.active and event.buttons() == QtCore.Qt.NoButton:
+        if event.buttons() == QtCore.Qt.NoButton:
             pos = event.pos()
             x, y = pos.x()-self.canvas.x(), pos.y()-self.canvas.y()
 
             if x < 0 or x >= self.w or y < 0 or y >= self.h:
                 pass
             else:
-                # Draw livewire
                 p = y, x
                 path = []
-                while p != self.seed:
-                    p = self.path_map[p]
-                    path.append(p)
+                
+                # Calculate path map
+                if self.seed_enabled and self.seed is not None:
+                    #Thread(target=self._update_path_map_progress).start()
+                    self._cal_path_matrix(p)
+                
+                    # Draw livewire
+                    while p != self.seed:
+                        p = self.path_map[p]
+                        path.append(p)
                 
                 image = self.image.copy()
                 draw = QtGui.QPainter()
@@ -148,12 +151,12 @@ class ImageWin(QtGui.QWidget):
                 draw.end()
                 self.canvas.setPixmap(image)
     
-    def _cal_path_matrix(self):
+    def _cal_path_matrix(self, p):
         self.seed_enabled = False
         self.active = False
-        self.status_bar.showMessage('Calculating path map...')
-        path_matrix = self.lw.get_path_matrix(self.seed)
-        self.status_bar.showMessage(r'Left: new seed / Right: finish')
+        #self.status_bar.showMessage('Calculating path map...')
+        path_matrix = self.lw.get_path_matrix(self.seed, p)
+        #self.status_bar.showMessage(r'Left: new seed / Right: finish')
         self.seed_enabled = True
         self.active = True
         
