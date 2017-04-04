@@ -3,6 +3,10 @@ import Image
 import cv2
 import sys 
 import numpy as np
+from scipy import signal
+from scipy import ndimage
+import pylab
+
 
 ''' Compares the Canny generated edge map to the training set edge map image using the following parameters imgA is part of the training image, imgB is part of the canny edge detection generated image'''
 
@@ -29,8 +33,6 @@ def dice(imA, imB):
 	(n,m) = imA.shape
 	for i in range(0,n):
 		for j in range(0,m):
-			if(imB[i][j] != 0):
-				print(imB[i][j])
 			if(imA[i][j] == _pixel): 
 				if(imB[i][j] == _pixel):
 					a = a+1
@@ -45,65 +47,67 @@ def dice(imA, imB):
 	dice = (2*a)/(2*a + b - c)
 	return dice
 
+def fspecial_gauss(size, sigma):
+    	"""Function to mimic the 'fspecial' gaussian MATLAB function
+	from: https://github.com/mubeta06/python/blob/master/signal_processing/sp/gauss.py
+    	"""
+    	x, y = np.mgrid[-size//2 + 1:size//2 + 1, -size//2 + 1:size//2 + 1]
+    	g = np.exp(-((x**2 + y**2)/(2.0*sigma**2)))
+	return g/g.sum()
+
+
 def ssim(imA, imB):
 	_pixel = 255
-#computes structural similarity index between two images
-	if(_pixel == 1):
-		L = 0
-	else:	
-		L = _pixel 
+	#computes structural similarity index between two images
+	imA = imA.astype(np.float64)
+	imB = imB.astype(np.float64)	
+	L = 255
 	K1 = 0.01
 	K2 = 0.03 
 	C1 = K1*L*K1*L
 	C2 = K2*L*K2*L
+	size = 11
+	sigma = 1.5
+	window = fspecial_gauss(size,sigma)
 
-	(n,m) = imA.shape
-	ua = 0
-	ub = 0
-	siga = 0
-	sigb = 0 
-	sigab = 0 
-	#calculate mean of both images 
-	for i in range(0,n):
-		for j in range(0,m):
-			ua = ua + imA[i][j]
-			ub = ub + imB[i][j]
-	ua = ua/(n*m)
-	ub = ub/(n*m)
 	
-	#calculate sigma values 
-	for i in range(0,n):
-		for j in range(0,m):
-			ai = imA[i][j]
-			bi = imB[i][j]
-			siga = siga + (ai-ua)*(ai-ua)
-			sigb = sigb + (bi-ub)*(bi-ub)
-			sigab = sigab + (ai-ua)*(bi-ub)
-	
-	siga = siga/(n*m)
-	sigb = sigb/(n*m)
-	sigab = sigab/(n*m)
+	ua = signal.fftconvolve(window, imA, mode='valid')
+	ub = signal.fftconvolve(window, imB, mode='valid')
+	siga_sq = signal.fftconvolve(window, imA*imA, mode='valid') - ua*ua
+	sigb_sq = signal.fftconvolve(window, imB*imB, mode='valid') - ub*ub
+	sigab = signal.fftconvolve(window, imA*imB, mode='valid') - ua*ub 
+
+
 
 	#use computed values to calculate ssim 
-	ssim = (2*ua*ub + C1)*(2*sigab + C2)/((ua*ua - ub*ub + C1)*(ua*ua + ub*ub + C2))
-	return ssim 
+	ssim_map = (2*ua*ub + C1)*(2*sigab + C2)/((ua*ua + ub*ub + C1)*(siga_sq + sigb_sq + C2))
 	
+	return ssim_map.mean()
+
 			
 if __name__ == '__main__':
-	imgA = cv2.imread('test_out20.jpg')
-	imgB = cv2.imread('20_canny.jpg')
-	imgA = cv2.cvtColor(imgA,cv2.COLOR_BGR2GRAY)
-	imgB = cv2.cvtColor(imgB,cv2.COLOR_BGR2GRAY)
-	cv2.imshow('img', imgA)                                   # Display
-	cv2.waitKey(0)
-	cv2.imshow('img', imgB)                                   # Display
-	cv2.waitKey(0)
-	mse = mse(imgA, imgB)
-	print(mse)
-	dice = dice(imgA, imgB)
-	print(dice)
-	ssim = ssim(imgA, imgB)
-	print(ssim)
+	#imgA = cv2.imread('test_images/test_out20.jpg',0)
+	#imgB = cv2.imread('test_images/20_canny.jpg',0)
+	#mse = mse(imgA, imgB)
+	#print(mse)
+	#dice = dice(imgA, imgB)
+	#print(dice)
+	#ssim = ssim(imgA, imgB)
+	#print(ssim)
+	img = cv2.imread('test_images/20_masked.jpg',0)
+	sobelx = cv2.Sobel(img,cv2.CV_64F,1,0,ksize=5)
+	sobely = cv2.Sobel(img,cv2.CV_64F,0,1,ksize=5)
+	sobel = np.sqrt(np.square(sobelx)+np.square(sobely))
+
+	# ## Training Set
+
+	# In[14]:
+
+	# Transforming the feature set in the appropriate form for sklearn
+	X1=img.reshape(-1) #Feature 1
+	X2=sobel.reshape(-1) # Feature 2
+	train=range(0,255)
+	print(X1)
 	
 
 	

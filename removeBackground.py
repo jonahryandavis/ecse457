@@ -13,7 +13,7 @@ MASK_COLOR = 0
 #== Processing =======================================================================
 
 #-- Read image -----------------------------------------------------------------------
-img = cv2.imread('20.jpg')
+img = cv2.imread('test_images/22.jpg')
 cv2.imshow("src",img)
 cv2.waitKey(0)
 gray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
@@ -44,7 +44,6 @@ cv2.fillConvexPoly(mask, max_contour[0], (255))
 mask = cv2.dilate(mask, None, iterations=MASK_DILATE_ITER)
 mask = cv2.erode(mask, None, iterations=MASK_ERODE_ITER)
 mask = cv2.GaussianBlur(mask, (BLUR, BLUR), 0)
-cv2.imwrite('20_mask.jpg',mask) 
 mask_stack = np.dstack([mask]*3)    # Create 3-channel alpha mask
 
 
@@ -58,4 +57,4 @@ masked = (masked * 255).astype('uint8')                     # Convert back to 8-
 img_output = cv2.cvtColor(masked,cv2.COLOR_BGR2GRAY)
 cv2.imshow('img', img_output)                                   # Display
 cv2.waitKey(0)
-cv2.imwrite('20_masked.jpg',img_output)           # Save
+cv2.imwrite('test_images/22_masked.jpg',img_output)           # Save

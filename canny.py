@@ -13,7 +13,7 @@ def canny(img, lowThreshold, ratio, ap_size):
 	return detected_edges
 
 def main(): 
-	img = cv2.imread('20_masked.jpg')
+	img = cv2.imread('20_masked.jpg',0)
 	detected_edges = canny(img, 1, 200, 3)
 	cv2.imshow('img', detected_edges)                                   # Display
 	cv2.waitKey(0)
