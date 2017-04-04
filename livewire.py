@@ -7,6 +7,9 @@ import cv2
 import numpy as np
 import time
 
+CLASSIC_WEIGHT = 0.5
+BOUNDARY_MAP_WEIGHT = 0.5
+
 SQRT_0_5 = 0.70710678118654757
 
 class Livewire():
@@ -16,8 +19,9 @@ class Livewire():
         2. Dijkstra algorithm
     """
     
-    def __init__(self, image):
+    def __init__(self, image, boundary_map):
         self.image = image
+        self.boundary_map = boundary_map
         self.x_lim = image.shape[0]
         self.y_lim = image.shape[1]
         # The values in cost matrix ranges from 0~1
@@ -81,6 +85,11 @@ class Livewire():
         
         # 2/3pi * ...
         return 0.212206590789 * (np.arccos(dp_l)+np.arccos(l_dq))
+
+    def _boundary_map_cost(self, p, q):
+        r, g, b = self.boundary_map[q[0], q[1]]
+        total_boundary_probability = (int(r)+int(g)+int(b))/765
+        return 1 - 0.4 * total_boundary_probability
     
     def _local_cost(self, p, q):
         """
@@ -108,6 +117,9 @@ class Livewire():
         
         return cost_pq * cost_pq
 
+    def _weighted_cost(self, p, q):
+        return (CLASSIC_WEIGHT * self._local_cost(p, q)) + (BOUNDARY_MAP_WEIGHT * self._boundary_map_cost(p, q))
+
     def get_path_matrix(self, seed, p):
         """
         Get the back tracking matrix of the whole image from the cost matrix
@@ -134,7 +146,7 @@ class Livewire():
 
             # Record accumulated costs and back tracking point for newly expanded points
             for q in [x for x in neighbors if x not in processed]:
-                temp_cost = cost[p] + self._local_cost(p, q)
+                temp_cost = cost[p] + self._weighted_cost(p, q)
                 if q in cost:
                     if temp_cost < cost[q]:
                         cost.pop(q)

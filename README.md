@@ -38,6 +38,7 @@ Options:
 This program runs the livewire GUI to segment a new image
 
 1. Open the image you wish to segment.
+2. Open the boundary map for the corresponding image
 2. Left mouse to place a new anchor/seed. Right mouse to complete the segment. Escape to save the segmentation.
 3. Choose a name for the image segmentation and save the file
     

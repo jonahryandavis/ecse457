@@ -25,13 +25,17 @@ class ImageWin(QtGui.QWidget):
     def setupUi(self):
         self.hbox = QtGui.QVBoxLayout(self)
         
-        # Load and initialize image
+        # Load and initialize image and boundary map
         self.image_path = ''
+        self.boundary_map_path = ''
         while self.image_path == '':
             self.image_path = QtGui.QFileDialog.getOpenFileName(self, '', '', '(*.bmp *.jpg *.png)')
         self.image = QtGui.QPixmap(self.image_path)
         self.cv2_image = cv2.imread(str(self.image_path))
-        self.lw = Livewire(self.cv2_image)
+        while self.boundary_map_path == '':
+            self.boundary_map_path = QtGui.QFileDialog.getOpenFileName(self, '', '', '(*.bmp *.jpg *.png)')
+        self.cv2_boundary_map = cv2.imread(str(self.boundary_map_path))
+        self.lw = Livewire(self.cv2_image, self.cv2_boundary_map)
         self.w, self.h = self.image.width(), self.image.height()
         
         self.canvas = QtGui.QLabel(self)
